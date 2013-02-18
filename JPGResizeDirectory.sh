@@ -11,7 +11,10 @@
 imagePath="$1"
 amount="$2"
 
-cd $ImagePath
-for i in *.jpg
+cd $imagePath
+for i in *.JPG
+    do mv "$i" "`basename $i .JPG`.jpg"
+done
+for i in *.jpg 
     do convert $i -resize $amount% $(basename $i .jpg).jpg
 done
